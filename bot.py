@@ -1,8 +1,10 @@
 import discord
+import config
 
 intents = discord.Intents.default()
 intents.message_content = True
 intents.voice_states = True
+TOKEN = config.TOKEN
 
 client = discord.Client(intents=intents)
 
@@ -36,4 +38,4 @@ async def on_voice_state_update(member, before, after):
         await text_channel.send(f'{member.name} amanerao se fue')
 
 
-client.run('MTE4NTMwOTUyODMyMTk0OTc0Ng.G94OSs.NSuH87ZvWV8jkpyXLv0nbKXgbN0R88L7VdNEV8')
+client.run(TOKEN)
